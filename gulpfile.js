@@ -5,7 +5,7 @@ const gulp = require("gulp"),
       autoprefixer = require("autoprefixer"),
       cssnano = require("cssnano"),
       babel = require('gulp-babel'),
-      uglify = require('gulp-uglify');
+      uglify = require('gulp-uglify'),
       sourcemaps = require("gulp-sourcemaps"),
       cssvariables = require('postcss-css-variables'),
       browserSync = require("browser-sync").create();
@@ -59,11 +59,6 @@ function script() {
     .pipe(uglify())
     .pipe(gulp.dest(paths.scripts.dest))
     .pipe(browserSync.stream());
-}
-
-// A simple task to reload the page
-function reload() {
-  browserSync.reload();
 }
 
 // Add browsersync initialization at the start of the watch task
